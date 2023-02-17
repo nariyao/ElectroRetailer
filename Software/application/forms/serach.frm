@@ -40,12 +40,11 @@ Begin VB.Form search
       TextStyleFixed  =   1
       FocusRect       =   0
       HighLight       =   2
-      GridLinesFixed  =   0
+      GridLinesFixed  =   1
       SelectionMode   =   1
       AllowUserResizing=   1
       Appearance      =   0
       MousePointer    =   1
-      FormatString    =   ""
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "MS Sans Serif"
          Size            =   9.75
@@ -56,7 +55,7 @@ Begin VB.Form search
          Strikethrough   =   0   'False
       EndProperty
    End
-   Begin VB.TextBox Text1 
+   Begin VB.TextBox search_box 
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   12
@@ -69,13 +68,13 @@ Begin VB.Form search
       Height          =   405
       Left            =   12000
       TabIndex        =   0
-      Text            =   "Text1"
       Top             =   480
       Width           =   6975
    End
    Begin VB.Label SID 
+      AutoSize        =   -1  'True
       BackStyle       =   0  'Transparent
-      Caption         =   "Enter Supplier Id:"
+      Caption         =   "Search:"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   9.75
@@ -85,11 +84,11 @@ Begin VB.Form search
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   255
-      Left            =   10080
+      Height          =   240
+      Left            =   10920
       TabIndex        =   1
       Top             =   600
-      Width           =   1935
+      Width           =   810
    End
 End
 Attribute VB_Name = "search"
@@ -97,26 +96,7 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
-Private Function mfg_setHeader()
-smfg.TextMatrix(0, 0) = " Supplier ID"
-smfg.TextMatrix(0, 1) = " Supplier Name"
-smfg.TextMatrix(0, 2) = " Company Name"
-smfg.TextMatrix(0, 3) = " Email"
-smfg.TextMatrix(0, 4) = " Mobile"
-smfg.TextMatrix(0, 5) = " GST No."
-smfg.TextMatrix(0, 6) = " PAN Card"
-smfg.TextMatrix(0, 7) = " Address"
-smfg.TextMatrix(0, 8) = " Pincode"
-smfg.ColWidth(0) = 2500
-smfg.ColWidth(1) = 3500
-smfg.ColWidth(2) = 5000
-smfg.ColWidth(3) = 3500
-smfg.ColWidth(4) = 1500
-smfg.ColWidth(5) = 2000
-smfg.ColWidth(6) = 1400
-smfg.ColWidth(7) = 6800
-smfg.ColWidth(8) = 1500
-End Function
+Public searchStatus As String
 
 Private Sub Form_Load()
 Me.Top = 0
@@ -128,3 +108,19 @@ End Sub
 Private Sub Form_LostFocus()
 Me.Hide
 End Sub
+
+Private Sub search_box_Change()
+Select Case searchStatus
+Case "emp": smfgEmp (search_box.Text)
+Case "sup": smfgSup (search_box.Text)
+End Select
+End Sub
+
+Private Sub smfg_DblClick()
+Select Case searchStatus
+Case "emp": empUpDel (smfg.TextMatrix(smfg.RowSel, 0))
+Case "sup": supUpDel (smfg.TextMatrix(smfg.RowSel, 0))
+End Select
+End Sub
+
+

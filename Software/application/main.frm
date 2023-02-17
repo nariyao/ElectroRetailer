@@ -206,8 +206,7 @@ insEmp
 End Sub
 
 Private Sub addSup_btn_Click()
-supplier.Show
-supplier.SetFocus
+insSupplier
 End Sub
 
 Private Sub dis_emp_btn_Click()
@@ -255,7 +254,7 @@ End Sub
 
 
 Private Sub s_display_btn_Click()
-DisplaySupplier
+displaySupplier
 End Sub
 
 

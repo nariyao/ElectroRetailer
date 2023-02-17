@@ -3,16 +3,16 @@ Begin VB.Form account
    BackColor       =   &H00FEF9E2&
    BorderStyle     =   0  'None
    Caption         =   "Form2"
-   ClientHeight    =   3135
+   ClientHeight    =   11685
    ClientLeft      =   60
    ClientTop       =   405
-   ClientWidth     =   4680
+   ClientWidth     =   21585
    LinkTopic       =   "Form2"
    MaxButton       =   0   'False
    MDIChild        =   -1  'True
    MinButton       =   0   'False
-   ScaleHeight     =   3135
-   ScaleWidth      =   4680
+   ScaleHeight     =   11685
+   ScaleWidth      =   21585
    ShowInTaskbar   =   0   'False
    Begin VB.Frame Frame4 
       BackColor       =   &H00FC526B&

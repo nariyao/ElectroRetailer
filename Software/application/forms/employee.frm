@@ -17,10 +17,85 @@ Begin VB.Form emp
    ShowInTaskbar   =   0   'False
    Begin VB.Frame Frame1 
       Height          =   13095
-      Left            =   1440
-      TabIndex        =   18
+      Left            =   1560
+      TabIndex        =   17
       Top             =   600
       Width           =   18615
+      Begin VB.ComboBox quali 
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   12
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   420
+         Left            =   13680
+         TabIndex        =   38
+         Top             =   4560
+         Width           =   2175
+      End
+      Begin VB.Frame Frame2 
+         BorderStyle     =   0  'None
+         Height          =   375
+         Left            =   11040
+         TabIndex        =   33
+         Top             =   4560
+         Width           =   2175
+         Begin VB.OptionButton T 
+            Caption         =   "T"
+            BeginProperty Font 
+               Name            =   "MS Sans Serif"
+               Size            =   9.75
+               Charset         =   0
+               Weight          =   700
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   240
+            Left            =   1680
+            TabIndex        =   36
+            Top             =   120
+            Width           =   495
+         End
+         Begin VB.OptionButton F 
+            Caption         =   "F"
+            BeginProperty Font 
+               Name            =   "MS Sans Serif"
+               Size            =   9.75
+               Charset         =   0
+               Weight          =   700
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   240
+            Left            =   840
+            TabIndex        =   35
+            Top             =   120
+            Width           =   495
+         End
+         Begin VB.OptionButton M 
+            Caption         =   "M"
+            BeginProperty Font 
+               Name            =   "MS Sans Serif"
+               Size            =   9.75
+               Charset         =   0
+               Weight          =   700
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   240
+            Left            =   0
+            TabIndex        =   34
+            Top             =   120
+            Width           =   495
+         End
+      End
       Begin VB.ComboBox post 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
@@ -33,8 +108,7 @@ Begin VB.Form emp
          EndProperty
          Height          =   420
          Left            =   840
-         TabIndex        =   11
-         Text            =   "Combo1"
+         TabIndex        =   10
          Top             =   6720
          Width           =   4215
       End
@@ -65,7 +139,7 @@ Begin VB.Form emp
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   62062593
+         Format          =   144244737
          CurrentDate     =   44955
       End
       Begin VB.TextBox id 
@@ -80,7 +154,9 @@ Begin VB.Form emp
          EndProperty
          Height          =   420
          Left            =   840
-         TabIndex        =   31
+         Locked          =   -1  'True
+         MaxLength       =   10
+         TabIndex        =   30
          Top             =   2040
          Width           =   4215
       End
@@ -105,7 +181,8 @@ Begin VB.Form emp
          EndProperty
          Height          =   420
          Left            =   11040
-         TabIndex        =   13
+         MaxLength       =   5
+         TabIndex        =   12
          Top             =   6720
          Width           =   4935
       End
@@ -121,7 +198,8 @@ Begin VB.Form emp
          EndProperty
          Height          =   420
          Left            =   5400
-         TabIndex        =   12
+         MaxLength       =   1
+         TabIndex        =   11
          Top             =   6720
          Width           =   5175
       End
@@ -137,7 +215,8 @@ Begin VB.Form emp
          EndProperty
          Height          =   420
          Left            =   11040
-         TabIndex        =   10
+         MaxLength       =   2
+         TabIndex        =   9
          Top             =   5640
          Width           =   4935
       End
@@ -153,25 +232,10 @@ Begin VB.Form emp
          EndProperty
          Height          =   420
          Left            =   840
-         TabIndex        =   9
+         MaxLength       =   100
+         TabIndex        =   8
          Top             =   5640
          Width           =   9735
-      End
-      Begin VB.TextBox quali 
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   12
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   420
-         Left            =   11040
-         TabIndex        =   8
-         Top             =   4560
-         Width           =   4935
       End
       Begin VB.TextBox adhaar 
          BeginProperty DataFormat 
@@ -194,6 +258,7 @@ Begin VB.Form emp
          EndProperty
          Height          =   420
          Left            =   5400
+         MaxLength       =   16
          TabIndex        =   7
          Top             =   4560
          Width           =   5175
@@ -210,6 +275,7 @@ Begin VB.Form emp
          EndProperty
          Height          =   420
          Left            =   840
+         MaxLength       =   30
          TabIndex        =   6
          Top             =   4560
          Width           =   4215
@@ -235,6 +301,7 @@ Begin VB.Form emp
          EndProperty
          Height          =   420
          Left            =   5400
+         MaxLength       =   10
          TabIndex        =   4
          Top             =   3240
          Width           =   5175
@@ -251,11 +318,12 @@ Begin VB.Form emp
          EndProperty
          Height          =   420
          Left            =   840
+         MaxLength       =   30
          TabIndex        =   3
          Top             =   3240
          Width           =   4215
       End
-      Begin VB.TextBox name 
+      Begin VB.TextBox emp_name 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   12
@@ -267,6 +335,7 @@ Begin VB.Form emp
          EndProperty
          Height          =   420
          Left            =   5400
+         MaxLength       =   30
          TabIndex        =   0
          Top             =   2040
          Width           =   5175
@@ -289,8 +358,55 @@ Begin VB.Form emp
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   117964801
+         Format          =   143785985
          CurrentDate     =   44955
+      End
+      Begin VB.Label emp_msg_lb 
+         AutoSize        =   -1  'True
+         Caption         =   "Label16"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   195
+         Left            =   960
+         TabIndex        =   39
+         Top             =   7680
+         Visible         =   0   'False
+         Width           =   690
+      End
+      Begin VB.Label Label15 
+         AutoSize        =   -1  'True
+         BackStyle       =   0  'Transparent
+         Caption         =   "Gender"
+         BeginProperty DataFormat 
+            Type            =   1
+            Format          =   "dd-MM-yyyy"
+            HaveTrueFalseNull=   0
+            FirstDayOfWeek  =   0
+            FirstWeekOfYear =   0
+            LCID            =   16393
+            SubFormatType   =   3
+         EndProperty
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Left            =   11040
+         TabIndex        =   37
+         Top             =   4200
+         Width           =   780
       End
       Begin VB.Label delete_btn 
          Alignment       =   2  'Center
@@ -308,7 +424,7 @@ Begin VB.Form emp
          ForeColor       =   &H8000000E&
          Height          =   615
          Left            =   11880
-         TabIndex        =   16
+         TabIndex        =   15
          Top             =   7680
          Width           =   1935
       End
@@ -328,7 +444,7 @@ Begin VB.Form emp
          ForeColor       =   &H8000000E&
          Height          =   615
          Left            =   9720
-         TabIndex        =   15
+         TabIndex        =   14
          Top             =   7680
          Width           =   1935
       End
@@ -348,7 +464,7 @@ Begin VB.Form emp
          ForeColor       =   &H8000000E&
          Height          =   615
          Left            =   11880
-         TabIndex        =   14
+         TabIndex        =   13
          Top             =   8400
          Width           =   1935
       End
@@ -368,7 +484,7 @@ Begin VB.Form emp
          ForeColor       =   &H8000000E&
          Height          =   615
          Left            =   14040
-         TabIndex        =   17
+         TabIndex        =   16
          Top             =   7680
          Width           =   1935
       End
@@ -387,7 +503,7 @@ Begin VB.Form emp
          EndProperty
          Height          =   240
          Left            =   11040
-         TabIndex        =   33
+         TabIndex        =   32
          Top             =   1680
          Width           =   1575
       End
@@ -406,7 +522,7 @@ Begin VB.Form emp
          EndProperty
          Height          =   240
          Left            =   840
-         TabIndex        =   32
+         TabIndex        =   31
          Top             =   1680
          Width           =   1350
       End
@@ -425,7 +541,7 @@ Begin VB.Form emp
          EndProperty
          Height          =   240
          Left            =   11040
-         TabIndex        =   30
+         TabIndex        =   29
          Top             =   2880
          Width           =   1350
       End
@@ -444,7 +560,7 @@ Begin VB.Form emp
          EndProperty
          Height          =   240
          Left            =   11040
-         TabIndex        =   29
+         TabIndex        =   28
          Top             =   6360
          Width           =   690
       End
@@ -463,7 +579,7 @@ Begin VB.Form emp
          EndProperty
          Height          =   240
          Left            =   5400
-         TabIndex        =   28
+         TabIndex        =   27
          Top             =   6360
          Width           =   780
       End
@@ -482,7 +598,7 @@ Begin VB.Form emp
          EndProperty
          Height          =   240
          Left            =   840
-         TabIndex        =   27
+         TabIndex        =   26
          Top             =   6360
          Width           =   480
       End
@@ -501,7 +617,7 @@ Begin VB.Form emp
          EndProperty
          Height          =   240
          Left            =   11040
-         TabIndex        =   26
+         TabIndex        =   25
          Top             =   5280
          Width           =   1290
       End
@@ -528,8 +644,8 @@ Begin VB.Form emp
             Strikethrough   =   0   'False
          EndProperty
          Height          =   240
-         Left            =   11040
-         TabIndex        =   25
+         Left            =   13680
+         TabIndex        =   24
          Top             =   4200
          Width           =   1305
       End
@@ -548,7 +664,7 @@ Begin VB.Form emp
          EndProperty
          Height          =   240
          Left            =   840
-         TabIndex        =   24
+         TabIndex        =   23
          Top             =   5280
          Width           =   885
       End
@@ -567,7 +683,7 @@ Begin VB.Form emp
          EndProperty
          Height          =   240
          Left            =   5400
-         TabIndex        =   23
+         TabIndex        =   22
          Top             =   4200
          Width           =   1320
       End
@@ -586,7 +702,7 @@ Begin VB.Form emp
          EndProperty
          Height          =   240
          Left            =   840
-         TabIndex        =   22
+         TabIndex        =   21
          Top             =   4200
          Width           =   600
       End
@@ -605,7 +721,7 @@ Begin VB.Form emp
          EndProperty
          Height          =   240
          Left            =   5400
-         TabIndex        =   21
+         TabIndex        =   20
          Top             =   2880
          Width           =   1590
       End
@@ -624,7 +740,7 @@ Begin VB.Form emp
          EndProperty
          Height          =   240
          Left            =   840
-         TabIndex        =   20
+         TabIndex        =   19
          Top             =   2880
          Width           =   1530
       End
@@ -643,7 +759,7 @@ Begin VB.Form emp
          EndProperty
          Height          =   240
          Left            =   5400
-         TabIndex        =   19
+         TabIndex        =   18
          Top             =   1680
          Width           =   630
       End
@@ -654,12 +770,40 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
-Private Sub close_btn_Click()
-Unload Me
+'Insert Button
+Private Sub add_btn_Click()
+On Error GoTo EMP_ER_INS
+connectOracle
+sql = "INSERT INTO ER_MASTER_EMPLOYEE VALUES('" + id.Text + "','" + emp_name.Text + "','" + fname.Text + "','" + Trim(Str(dob.Value)) + "','" + getGender + "','" + mobile.Text + "','" + email.Text + "','" + adhaar.Text + "','" + Trim(Str(doj.Value)) + "','" + addr.Text + "','" + quali.Text + "','" + expr.Text + "','" + post.Text + "','" + leaves.Text + "'," + salary.Text + ")"
+C.Execute (sql)
+C.Execute ("commit")
+C.Close
+emp_msg_lb.Caption = "Succes! Employee Data Uploaded"
+emp_msg_lb.Visible = True
+emp_msg_lb.ForeColor = green
+clearEmp
+enableAddBtn
+Exit Sub
+EMP_ER_INS:
+empErr
 End Sub
 
-Private Sub delete_btn_Click()
+'update employee details
+Private Sub update_btn_Click()
 Dim sql As String
+sql = "UPDATE ER_MASTER_EMPLOYEE SET E_NAME='" + emp_name.Text + "', E_FNAME='" + fname.Text + "',E_DOB='" + Trim(Str(dob.Value)) + "',E_GENDER='" + getGender + "',E_MOB='" + mobile.Text + "',E_MAIL='" + email.Text + "',E_ADHAAR='" + adhaar.Text + "',E_DOJ='" + Trim(Str(doj.Value)) + "',E_ADD='" + addr.Text + "',E_QUL='" + quali.Text + "',E_EXP='" + expr.Text + "',E_POST='" + post.Text + "',E_LEAVE='" + leaves.Text + "',E_SALARY=" + salary.Text + " WHERE E_id='" + id.Text + "'"
+connectOracle
+C.Execute (sql)
+C.Execute ("commit")
+C.Close
+temp = empMsg("S", "Updated")
+End Sub
+
+'Delete Button
+Private Sub delete_btn_Click()
+temp = MsgBox("it is going to deleted permanently", vbExclamation + vbOKCancel, "Deleting Employee Details")
+If temp = vbOK Then
+On Error GoTo EMP_ER_DEL
 sql = "DELETE FROM ER_MASTER_EMPLOYEE WHERE e_id='" + id.Text + "'"
 connectOracle
 C.Execute (sql)
@@ -667,7 +811,19 @@ C.Execute ("commit")
 C.Close
 MsgBox "Employee ID deleted as well as its related data"
 Unload Me
+clearEmp
 displayEmp
+End If
+Exit Sub
+EMP_ER_DEL:
+temp = empMsg("E", "")
+End Sub
+
+'Close button
+Private Sub close_btn_Click()
+displayEmp
+Unload Me
+clearEmp
 End Sub
 
 Private Sub Form_Load()
@@ -675,36 +831,57 @@ Me.Top = 0
 Me.Left = 0
 Me.Width = main.ScaleWidth
 Me.Height = main.ScaleHeight
-id.Enabled = False
 add_btn.Top = 7680
+defaultEmpValues
 End Sub
 
-Public Function setValue(ByVal emp_id As String, ByVal emp_name As String, ByVal emp_fname As String, ByVal emp_doj As String, ByVal emp_dob As String, ByVal emp_mob As String, ByVal emp_email As String, ByVal emp_adhaar As String, ByVal emp_addr As String, ByVal emp_quali As String, ByVal emp_expr As String, ByVal emp_post As String, ByVal emp_leave As Integer, ByVal emp_salary As Double)
-id.Text = emp_id
-name.Text = emp_name
-fname.Text = emp_fname
-doj.Value = emp_doj
-dob.Value = emp_dob
-mobile.Text = emp_mob
-email.Text = emp_email
-adhaar.Text = emp_adhaar
-addr.Text = emp_addr
-quali.Text = emp_quali
-expr.Text = emp_expr
-post.Text = emp_post
-leaves.Text = emp_leave
-salary.Text = Str(emp_salary)
+'Default value for form
+Private Function defaultEmpValues()
+quali.AddItem "10th Pass"
+quali.AddItem "12th Pass"
+quali.AddItem "Undergraduate"
+quali.AddItem "Graduate"
+quali.AddItem "Post Graduate"
+post.AddItem "Manager"
+post.AddItem "Worker"
+post.AddItem "Salesman"
 End Function
 
-'update employee details
-Private Sub update_btn_Click()
-Dim sql As String
-sql = "UPDATE ER_MASTER_EMPLOYEE E_NAME='" + name.Text + " WHERE e_id='" + id.Text + "'"
-connectOracle
-C.Execute (sql)
-C.Execute ("commit")
-C.Close
-MsgBox "Employee ID deleted as well as its related data"
-Unload Me
-displayEmp
-End Sub
+'clear textbox
+Private Function clearEmp()
+id.Text = generateEmpId
+emp_name.Text = ""
+fname.Text = ""
+mobile.Text = ""
+email.Text = ""
+adhaar.Text = ""
+addr.Text = ""
+quali.Text = ""
+expr.Text = ""
+post.Text = ""
+leaves.Text = ""
+salary.Text = ""
+emp_msg_lb.Visible = False
+End Function
+
+'Add button enable or disable
+Private Function enableAddBtn()
+If emp_name.Text = "" And fname.Text = "" And mobile.Text = "" And email.Text = "" And adhaar.Text = "" And addr.Text = "" And quali.Text = "" And expr.Text = "" And post.Text = "" And leaves.Text = "" And salary.Text = "" Then
+add_btn.Enabled = False
+Else
+add_btn.Enabled = True
+End If
+End Function
+
+
+'this is for display msg
+Private Function empMsg(ByVal msg_type As String, ByVal msg As String)
+Select Case msg_type
+Case "S":   emp_msg_lb.Caption = "Succes! " + msg
+            emp_msg_lb.Visible = True
+            emp_msg_lb.ForeColor = vbGreen
+Case "E":   emp_msg_lb.Caption = "Error! " + Str(Err.Number) + " : " + Err.Description
+            emp_msg_lb.Visible = True
+            emp_msg_lb.ForeColor = vbRed
+End Select
+End Function
