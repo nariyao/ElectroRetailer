@@ -228,7 +228,7 @@ tbMenu (1)
 End Sub
 
 Private Sub MDIForm_Load()
-home.Show
+Load home
 End Sub
 
 Private Sub menuAdmin_Click()

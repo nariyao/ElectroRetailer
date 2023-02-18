@@ -21,14 +21,11 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
-Private Sub Form_Activate()
-mainCaption ("Home")
+Private Sub Form_Load()
 Me.Top = 0
 Me.Left = 0
 Me.Width = main.ScaleWidth
 Me.Height = main.ScaleHeight
 End Sub
 
-Private Sub Label1_Click()
 
-End Sub
