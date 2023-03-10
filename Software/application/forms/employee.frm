@@ -139,7 +139,7 @@ Begin VB.Form emp
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   144244737
+         Format          =   139788289
          CurrentDate     =   44955
       End
       Begin VB.TextBox id 
@@ -358,7 +358,7 @@ Begin VB.Form emp
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   143785985
+         Format          =   139657217
          CurrentDate     =   44955
       End
       Begin VB.Label emp_msg_lb 
@@ -785,7 +785,7 @@ clearEmp
 enableAddBtn
 Exit Sub
 EMP_ER_INS:
-empErr
+temp = empMsg("E", "")
 End Sub
 
 'update employee details

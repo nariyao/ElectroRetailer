@@ -7,6 +7,7 @@ Begin VB.MDIForm main
    ClientLeft      =   60
    ClientTop       =   705
    ClientWidth     =   19500
+   Icon            =   "main.frx":0000
    LinkTopic       =   "MDIForm1"
    WindowState     =   2  'Maximized
    Begin MSComctlLib.StatusBar StatusBar1 
@@ -44,7 +45,7 @@ Begin VB.MDIForm main
          Left            =   960
          TabIndex        =   12
          Top             =   0
-         Width           =   855
+         Width           =   735
       End
       Begin VB.CommandButton dis_emp_btn 
          Caption         =   "Employee"
@@ -68,6 +69,22 @@ Begin VB.MDIForm main
       ButtonHeight    =   1005
       Appearance      =   1
       _Version        =   393216
+      Begin VB.CommandButton acc_tb 
+         Caption         =   "Account"
+         Height          =   615
+         Left            =   960
+         TabIndex        =   14
+         Top             =   0
+         Width           =   735
+      End
+      Begin VB.CommandButton tb_trans_dis 
+         Caption         =   "Transation"
+         Height          =   615
+         Left            =   120
+         TabIndex        =   13
+         Top             =   0
+         Width           =   735
+      End
    End
    Begin MSComctlLib.Toolbar tb_sell 
       Align           =   1  'Align Top
@@ -83,7 +100,7 @@ Begin VB.MDIForm main
       Appearance      =   1
       _Version        =   393216
       Begin VB.CommandButton selldetByCust_tbn 
-         Caption         =   "Command1"
+         Caption         =   "Customer"
          Height          =   615
          Left            =   120
          TabIndex        =   11
@@ -201,6 +218,11 @@ End Function
 
 
 
+Private Sub acc_tb_Click()
+account.Show
+account.SetFocus
+End Sub
+
 Private Sub add_emp_mbtn_Click()
 insEmp
 End Sub
@@ -208,7 +230,6 @@ End Sub
 Private Sub addSup_btn_Click()
 insSupplier
 End Sub
-
 Private Sub dis_emp_btn_Click()
 displayEmp
 End Sub
@@ -224,7 +245,8 @@ End Sub
 
 Private Sub MDIForm_Activate()
 tbMenu (1)
-
+accUpdate
+Unload account
 End Sub
 
 Private Sub MDIForm_Load()
@@ -261,4 +283,8 @@ End Sub
 Private Sub selldetByCust_tbn_Click()
 customer.Show
 customer.SetFocus
+End Sub
+
+Private Sub tb_trans_dis_Click()
+displayTrans
 End Sub

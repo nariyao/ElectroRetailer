@@ -6,12 +6,12 @@ Begin VB.Form db
    ClientHeight    =   6090
    ClientLeft      =   2085
    ClientTop       =   1905
-   ClientWidth     =   10170
+   ClientWidth     =   10365
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
    ScaleHeight     =   6090
-   ScaleWidth      =   10170
+   ScaleWidth      =   10365
    ShowInTaskbar   =   0   'False
    StartUpPosition =   2  'CenterScreen
    Begin VB.Frame pg_2 
@@ -234,10 +234,10 @@ Begin VB.Form db
       BackColor       =   &H00FFFFFF&
       BorderStyle     =   0  'None
       Height          =   5055
-      Left            =   4920
+      Left            =   240
       TabIndex        =   7
-      Top             =   240
-      Width           =   5175
+      Top             =   360
+      Width           =   9615
       Begin VB.CommandButton test_conn_btn 
          Caption         =   "Test Connection"
          BeginProperty Font 
@@ -250,7 +250,7 @@ Begin VB.Form db
             Strikethrough   =   0   'False
          EndProperty
          Height          =   555
-         Left            =   240
+         Left            =   4920
          Picture         =   "db.frx":0000
          TabIndex        =   2
          Top             =   2640
@@ -268,7 +268,7 @@ Begin VB.Form db
          EndProperty
          Height          =   480
          IMEMode         =   3  'DISABLE
-         Left            =   240
+         Left            =   4920
          PasswordChar    =   "*"
          TabIndex        =   1
          Top             =   2040
@@ -285,10 +285,17 @@ Begin VB.Form db
             Strikethrough   =   0   'False
          EndProperty
          Height          =   480
-         Left            =   240
+         Left            =   4920
          TabIndex        =   0
          Top             =   1200
          Width           =   4455
+      End
+      Begin VB.Image Image1 
+         Height          =   2355
+         Left            =   720
+         Picture         =   "db.frx":5D07
+         Top             =   1200
+         Width           =   2820
       End
       Begin VB.Label er_1 
          AutoSize        =   -1  'True
@@ -305,7 +312,7 @@ Begin VB.Form db
          EndProperty
          ForeColor       =   &H000000FF&
          Height          =   195
-         Left            =   1320
+         Left            =   6000
          TabIndex        =   11
          Top             =   3480
          Visible         =   0   'False
@@ -325,7 +332,7 @@ Begin VB.Form db
             Strikethrough   =   0   'False
          EndProperty
          Height          =   240
-         Left            =   240
+         Left            =   4920
          TabIndex        =   10
          Top             =   1800
          Width           =   1320
@@ -344,7 +351,7 @@ Begin VB.Form db
             Strikethrough   =   0   'False
          EndProperty
          Height          =   240
-         Left            =   240
+         Left            =   4920
          TabIndex        =   9
          Top             =   960
          Width           =   1350
@@ -363,7 +370,7 @@ Begin VB.Form db
             Strikethrough   =   0   'False
          EndProperty
          Height          =   300
-         Left            =   1440
+         Left            =   6120
          TabIndex        =   8
          Top             =   240
          Width           =   2160
